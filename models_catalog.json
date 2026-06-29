@@ -1,19 +1,20 @@
 {
-  "catalog_version": "1.0",
+  "catalog_version": "1.2",
   "updated_at": "2026-06-30",
-  "notice": "",
+  "notice": "画像解析モデル4種追加（Qwen2-VL・MiniCPM-V・moondream2・LLaVA-Phi3）",
   "candidates": [
     {
       "id": "qwen0.5",
-      "label": "Qwen2.5-0.5B（軽量ルーター）",
+      "label": "Qwen2.5-0.5B（司令塔・同梱済み）",
       "fileName": "Qwen2.5-0.5B-Q4_K_M.gguf",
       "sizeGB": 0.4,
       "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf",
-      "description": "タスク振り分け専用。超軽量・高速。Apache 2.0。",
+      "description": "タスク振り分け専用司令塔。超軽量・高速。",
       "minRamGB": 4,
       "minVramGB": 0,
       "license": "Apache 2.0",
-      "vendor": "Alibaba"
+      "vendor": "Alibaba",
+      "role": "router"
     },
     {
       "id": "qwen1.5",
@@ -21,11 +22,12 @@
       "fileName": "Qwen2.5-1.5B-Q4_K_M.gguf",
       "sizeGB": 1.0,
       "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf",
-      "description": "日本語・コード対応。低スペックPCに最適。Apache 2.0。",
+      "description": "日本語・コード対応。低スペックPCに最適。",
       "minRamGB": 8,
       "minVramGB": 0,
       "license": "Apache 2.0",
-      "vendor": "Alibaba"
+      "vendor": "Alibaba",
+      "role": "main"
     },
     {
       "id": "qwen3b",
@@ -33,11 +35,12 @@
       "fileName": "Qwen2.5-3B-Q4_K_M.gguf",
       "sizeGB": 2.0,
       "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q4_k_m.gguf",
-      "description": "点検文章生成に十分な性能。RAM 16GB推奨。Apache 2.0。",
+      "description": "点検文章生成に十分な性能。RAM 16GB推奨。",
       "minRamGB": 16,
       "minVramGB": 0,
       "license": "Apache 2.0",
-      "vendor": "Alibaba"
+      "vendor": "Alibaba",
+      "role": "main"
     },
     {
       "id": "qwen7b",
@@ -45,11 +48,12 @@
       "fileName": "Qwen2.5-7B-Q4_K_M.gguf",
       "sizeGB": 4.7,
       "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q4_k_m.gguf",
-      "description": "高品質な日本語生成。RAM 16GB以上推奨。Apache 2.0。",
+      "description": "高品質な日本語生成。RAM 16GB以上推奨。",
       "minRamGB": 16,
       "minVramGB": 0,
       "license": "Apache 2.0",
-      "vendor": "Alibaba"
+      "vendor": "Alibaba",
+      "role": "main"
     },
     {
       "id": "phi4mini",
@@ -57,11 +61,92 @@
       "fileName": "Phi-4-mini-instruct-Q4_K_M.gguf",
       "sizeGB": 2.5,
       "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct-gguf/resolve/main/Phi-4-mini-instruct-Q4_K_M.gguf",
-      "description": "Microsoft製・MIT License・日本語対応。Qwen3Bと同等サイズ。",
+      "description": "Microsoft製・MIT License・日本語対応。",
       "minRamGB": 8,
       "minVramGB": 0,
       "license": "MIT",
-      "vendor": "Microsoft"
+      "vendor": "Microsoft",
+      "role": "main"
+    },
+    {
+      "id": "gemma3-4b",
+      "label": "Gemma3-4B（Google製）",
+      "fileName": "gemma-3-4b-it-Q4_K_M.gguf",
+      "sizeGB": 2.5,
+      "url": "https://huggingface.co/bartowski/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-Q4_K_M.gguf",
+      "description": "Google製・日本語◎・軽量。Gemmaライセンス。",
+      "minRamGB": 8,
+      "minVramGB": 0,
+      "license": "Gemma",
+      "vendor": "Google",
+      "role": "main",
+      "licenseNote": "Gemma利用規約に同意が必要です"
+    },
+    {
+      "id": "ezo-gemma2-9b",
+      "label": "EZO-Gemma2-9B（日本語特化）",
+      "fileName": "EZO-Gemma2-9B-Q4_K_M.gguf",
+      "sizeGB": 5.5,
+      "url": "https://huggingface.co/elyza/EZO-Gemma2-9B-GGUF/resolve/main/EZO-Gemma2-9B-Q4_K_M.gguf",
+      "description": "日本語特化モデル。消防点検文章生成に最適。RAM 16GB以上推奨。",
+      "minRamGB": 16,
+      "minVramGB": 0,
+      "license": "Gemma",
+      "vendor": "ELYZA（日本）",
+      "role": "main",
+      "licenseNote": "Gemma利用規約に同意が必要です"
+    },
+    {
+      "id": "qwen2-vl-3b",
+      "label": "Qwen2-VL-3B（画像解析・日本語対応）",
+      "fileName": "Qwen2-VL-3B-Instruct-Q4_K_M.gguf",
+      "sizeGB": 2.3,
+      "url": "https://huggingface.co/bartowski/Qwen2-VL-3B-Instruct-GGUF/resolve/main/Qwen2-VL-3B-Instruct-Q4_K_M.gguf",
+      "description": "設備写真の日本語解析に対応。製造年・圧力計・外観異常を検出。",
+      "minRamGB": 8,
+      "minVramGB": 0,
+      "license": "Apache 2.0",
+      "vendor": "Alibaba",
+      "role": "vision"
+    },
+    {
+      "id": "minicpmv",
+      "label": "MiniCPM-V 2.6（高精度画像解析）",
+      "fileName": "MiniCPM-V-2_6-Q4_K_M.gguf",
+      "sizeGB": 5.0,
+      "url": "https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf/resolve/main/MiniCPM-V-2_6-Q4_K_M.gguf",
+      "description": "日本語画像解析の本命。ラベル読み取り・圧力計判定・外観異常検出。RAM 16GB推奨。",
+      "minRamGB": 16,
+      "minVramGB": 0,
+      "license": "Apache 2.0",
+      "vendor": "OpenBMB",
+      "role": "vision"
+    },
+    {
+      "id": "moondream2",
+      "label": "moondream2（超軽量画像解析）",
+      "fileName": "moondream2-Q4_K_M.gguf",
+      "sizeGB": 1.7,
+      "url": "https://huggingface.co/vikhyatk/moondream2-GGUF/resolve/main/moondream2-Q4_K_M.gguf",
+      "description": "超軽量・高速。英語強め。低スペックPCでの画像解析に。",
+      "minRamGB": 4,
+      "minVramGB": 0,
+      "license": "Apache 2.0",
+      "vendor": "vikhyatk",
+      "role": "vision"
+    },
+    {
+      "id": "llava-phi3",
+      "label": "LLaVA-Phi3（軽量・高精度）",
+      "fileName": "llava-phi-3-mini-Q4_K_M.gguf",
+      "sizeGB": 2.8,
+      "url": "https://huggingface.co/xtuner/llava-phi-3-mini-gguf/resolve/main/llava-phi-3-mini-Q4_K_M.gguf",
+      "description": "Phi3ベースの画像解析。軽量で精度良し。MIT License。",
+      "minRamGB": 8,
+      "minVramGB": 0,
+      "license": "MIT",
+      "vendor": "xtuner",
+      "role": "vision"
     }
   ]
 }
